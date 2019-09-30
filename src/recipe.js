@@ -4,14 +4,16 @@ import React from "react";
 const Recipe = ({ title, calories, image, ingredients }) => {
   return (
     <div className="recipe">
-      <h2>{title}</h2>
+      <h2 style={{ fontFamily: "Roboto" }}>{title}</h2>
       <ul>
         {ingredients.map(ingredient => (
-          <li>{ingredient.text}</li>
+          <li style={{ fontFamily: "Roboto", textAlign: "left" }}>
+            {ingredient.text}
+          </li>
         ))}
       </ul>
       <p>
-        <b>Calories : {calories} grams</b>
+        <b style={{ fontFamily: "Roboto" }}>Calories : {calories} grams</b>
       </p>
       <img className="image" src={image} alt="" />
     </div>
