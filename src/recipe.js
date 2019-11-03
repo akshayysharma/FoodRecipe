@@ -4,7 +4,9 @@ import React from "react";
 const Recipe = ({ title, calories, image, ingredients }) => {
   return (
     <div className="recipe">
-      <h2 style={{ fontFamily: "Roboto" }}>{title}</h2>
+     <img className="image" src={image} alt="" />
+      <div className="recipe-title">{title}</div>
+      
       <ul>
         {ingredients.map(ingredient => (
           <li style={{ fontFamily: "Roboto", textAlign: "left" }}>
@@ -13,9 +15,9 @@ const Recipe = ({ title, calories, image, ingredients }) => {
         ))}
       </ul>
       <p>
-        <b style={{ fontFamily: "Roboto" }}>Calories : {calories} grams</b>
+        <div className="cals">Calories : {calories} grams</div>
       </p>
-      <img className="image" src={image} alt="" />
+      
     </div>
   );
 };
