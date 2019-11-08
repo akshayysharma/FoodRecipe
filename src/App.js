@@ -39,7 +39,7 @@ const App = () => {
   }
   return (
     <div className="App">
-      
+      <div className="call"></div>
       <div className="title">Food Recipe</div>
       <form className="search-form" onSubmit={getSearch}>
         <input
