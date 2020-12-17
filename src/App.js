@@ -9,7 +9,7 @@ const App = () => {
   //creating state
   const [recipes, setRecipe] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("chicken");
+  const [query, setQuery] = useState("");
 
   const exampleReq = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
@@ -33,14 +33,22 @@ const App = () => {
     setQuery(search);
   };
 
+  function clear()
+  {
+    document.querySelector(".search-bar").value = "";
+  }
   return (
     <div className="App">
+      <div className="call"></div>
+      <div className="title">Food Recipe</div>
       <form className="search-form" onSubmit={getSearch}>
         <input
           className="search-bar"
           type="text"
           value={search}
           onChange={onChangeHandler}
+          autoFocus  
+          placeholder="enter a dish name"
         />
         <button className="search-button" type="submit">
           Submit
